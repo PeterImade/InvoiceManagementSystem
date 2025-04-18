@@ -19,7 +19,7 @@ namespace InvoiceAPI.Controllers
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetInvoice([FromRoute] int id)
-        {
+        {  
             var invoice = await _invoiceService.GetInvoiceWithItemsAsync(id);
             return Ok(new ApiResponse(invoice, "Invoice fetched successfully"));
         }
